@@ -9,6 +9,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: create-drop
+logging:
+  level:
+    root: debug
 
 jwt:
   access-header: Authorization
