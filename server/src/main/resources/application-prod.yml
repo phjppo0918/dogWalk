@@ -1,0 +1,20 @@
+server:
+  servlet:
+    context-path: /api/v1
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url:  jdbc:mysql://${DATABASE_MASTER_URL}/${DATABASE_MASTER_SCHEMA}?serverTimezone=Asia/Seoul
+    username: ${DATABASE_MASTER_USERNAME}
+    password: ${DATABASE_MASTER_PASSWORD}
+
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  access-header: Authorization
+  refresh-header: Refresh
+  secret: ${JWT_SECRET}
