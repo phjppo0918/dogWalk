@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityExistsException;
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +33,13 @@ public class MemberService implements EntityLoader<Member, Long> {
         if(memberRepository.existsByUsername(username)) {
             throw new EntityExistsException();
         }
+    }
+
+    public MemberResponse findById(Long id) {
+        return memberMapper.toResponse(getEntity(id));
+    }
+
+    public List<MemberResponse> findByPetName(String name) {
+        return memberRepository.findAllByPetName(name).stream().map(memberMapper::toResponse).toList();
     }
 }
