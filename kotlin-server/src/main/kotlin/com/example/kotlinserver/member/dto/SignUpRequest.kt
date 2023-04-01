@@ -7,6 +7,6 @@ data class SignUpRequest(
     val nickname: String,
     val password: String
 ) {
-    fun toEntity() : Member = Member(email = email, nickname = nickname, password = password)
+    fun toEntity(): Member = Member(email = email, nickname = nickname, password = password)
 }
 

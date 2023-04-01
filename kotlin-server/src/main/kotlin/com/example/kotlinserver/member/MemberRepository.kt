@@ -6,5 +6,5 @@ import java.util.*
 
 @Repository
 interface MemberRepository : JpaRepository<Member, UUID> {
-    fun findAllByNicknameContaining(nickname: String) : List<Member>
+    fun findAllByNicknameContaining(nickname: String): List<Member>
 }

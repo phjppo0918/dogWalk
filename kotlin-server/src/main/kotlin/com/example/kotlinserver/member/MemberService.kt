@@ -12,6 +12,6 @@ class MemberService(private val memberRepository: MemberRepository) {
         memberRepository.save(dto.toEntity())
     }
 
-    fun findAllByNicknameContaining(nickname: String) : List<MemberResponse> =
+    fun findAllByNicknameContaining(nickname: String): List<MemberResponse> =
         memberRepository.findAllByNicknameContaining(nickname).map { MemberResponse(it) }.toList()
 }
