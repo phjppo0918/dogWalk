@@ -19,3 +19,8 @@ spring:
   h2:
     console:
       enabled: true
+
+jwt:
+  access-header: Authorization
+  refresh-header: Refresh
+  secret: asdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdfasdf
