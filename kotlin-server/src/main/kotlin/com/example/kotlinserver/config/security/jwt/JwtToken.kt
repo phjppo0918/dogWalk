@@ -1,4 +1,7 @@
 package com.example.kotlinserver.config.security.jwt
 
-class JwtToken {
-}
+data class JwtToken(
+    val accessToken: String,
+    val refreshToken: String,
+    val grantType: String
+)
